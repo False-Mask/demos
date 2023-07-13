@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".conflict.ConflateActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="●从 Android 5.0 Lollipop 开始提供一套来支持嵌入的滑动效果，同样在最新的 Support V4 包中也提供了前向的兼容，有了嵌入滑动机制，就能实现很多很复杂的滑动效果，在 Android Design Support 库中非常重要的CoordinatorLayout 组件就是使用了这套机制，实现了 Toolbar 的收起和展开功能
+                 \n● 看起来像带有 header 的 RecyclerView 在滑动，但其实是嵌套滑动
+                 \n● layout_scrollFlags 和 layout_behavior 有很多可选值，配合起来可以实现多种效果，不只限于嵌套滑动。具体可以参考 API 文档。
+                 \n● 使用 CoordinatorLayout 实现嵌套滑动比手动实现要好得多，既可以实现连贯的吸顶嵌套滑动，又支持 fling。而且是官方提供的布局，可以放心使用，出 bug 的几率很小，性能也不会有问题。不过也正是因为官方将其封装得很好，使用 CoordinatorLayout 很难实现比较复杂的嵌套滑动布局，比如多级嵌套滑动
+                 \n● NestedScrolling提供了一套父 View 和子 View 滑动交互机制。要完成这样的交互，父 View 需要实现 NestedScrollingParent 接口，而子 View 需要实现 NestedScrollingChild 接口" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="---------------------我是分割线---------------------"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

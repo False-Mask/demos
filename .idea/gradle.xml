@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/build-logic" name="build-logic">
+                <projects>
+                  <project path="$PROJECT_DIR$/build-logic" />
+                  <project path="$PROJECT_DIR$/build-logic/test" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="corretto-11" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/activity" />
+            <option value="$PROJECT_DIR$/agp" />
+            <option value="$PROJECT_DIR$/android-collection" />
+            <option value="$PROJECT_DIR$/application" />
+            <option value="$PROJECT_DIR$/arouter" />
+            <option value="$PROJECT_DIR$/asm" />
+            <option value="$PROJECT_DIR$/aspectj" />
+            <option value="$PROJECT_DIR$/background" />
+            <option value="$PROJECT_DIR$/binder" />
+            <option value="$PROJECT_DIR$/build-logic" />
+            <option value="$PROJECT_DIR$/build-logic/test" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/choreographer" />
+            <option value="$PROJECT_DIR$/collection" />
+            <option value="$PROJECT_DIR$/content-provider" />
+            <option value="$PROJECT_DIR$/coordinator" />
+            <option value="$PROJECT_DIR$/coroutine" />
+            <option value="$PROJECT_DIR$/crash" />
+            <option value="$PROJECT_DIR$/event" />
+            <option value="$PROJECT_DIR$/fragment" />
+            <option value="$PROJECT_DIR$/frame-available" />
+            <option value="$PROJECT_DIR$/glide" />
+            <option value="$PROJECT_DIR$/gson" />
+            <option value="$PROJECT_DIR$/immersive" />
+            <option value="$PROJECT_DIR$/internal" />
+            <option value="$PROJECT_DIR$/launchmode" />
+            <option value="$PROJECT_DIR$/layout-inflater" />
+            <option value="$PROJECT_DIR$/leakcanary" />
+            <option value="$PROJECT_DIR$/lottie" />
+            <option value="$PROJECT_DIR$/measure" />
+            <option value="$PROJECT_DIR$/multi-thread" />
+            <option value="$PROJECT_DIR$/nestedscroll" />
+            <option value="$PROJECT_DIR$/okhttp" />
+            <option value="$PROJECT_DIR$/okio" />
+            <option value="$PROJECT_DIR$/process" />
+            <option value="$PROJECT_DIR$/reflect" />
+            <option value="$PROJECT_DIR$/rv" />
+            <option value="$PROJECT_DIR$/rxjava3" />
+            <option value="$PROJECT_DIR$/scroller" />
+            <option value="$PROJECT_DIR$/service" />
+            <option value="$PROJECT_DIR$/test" />
+            <option value="$PROJECT_DIR$/test-internal" />
+            <option value="$PROJECT_DIR$/threadpool" />
+            <option value="$PROJECT_DIR$/transform" />
+            <option value="$PROJECT_DIR$/transform-action" />
+            <option value="$PROJECT_DIR$/ui" />
+            <option value="$PROJECT_DIR$/vp" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

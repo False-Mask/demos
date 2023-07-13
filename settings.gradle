@@ -1,0 +1,61 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        includeBuild("build-logic")
+    }
+}
+dependencyResolutionManagement {
+    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+rootProject.name = "job"
+include ':process'
+include ':ui'
+include ':vp'
+include ':event'
+include ':nestedscroll'
+include ':fragment'
+include ':gson'
+include ':activity'
+include ':service'
+include ':launchmode'
+include ':test'
+include ':application'
+include ':scroller'
+include ':measure'
+include ':multi-thread'
+include ':okio'
+include ':glide'
+include ':binder'
+include ':leakcanary'
+include ':arouter'
+include ':threadpool'
+include ':reflect'
+include ':rxjava3'
+include ':crash'
+include ':lottie'
+include ':test-internal'
+include ':internal'
+include ':rv'
+include ':coordinator'
+include ':aspectj'
+include ':agp'
+include ':transform-action'
+include ':asm'
+include ':immersive'
+include ':content-provider'
+include ':background'
+include ':coroutine'
+include ':okhttp'
+include ':collection'
+include ':android-collection'
+include ':layout-inflater'
+include ':frame-available'
+include ':choreographer'
+include ':transform'
