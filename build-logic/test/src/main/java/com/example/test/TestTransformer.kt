@@ -7,7 +7,6 @@ import com.android.build.api.transform.QualifiedContent.DefaultContentType
 import com.android.build.api.transform.Transform
 import com.android.build.api.transform.TransformInput
 import com.android.build.api.transform.TransformOutputProvider
-import com.android.build.api.variant.VariantInfo
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 
@@ -22,6 +21,8 @@ object TestTransformer : Transform() {
 
     private val SCOPE = mutableSetOf<QualifiedContent.Scope>(
         QualifiedContent.Scope.PROJECT,
+        QualifiedContent.Scope.EXTERNAL_LIBRARIES,
+        QualifiedContent.Scope.SUB_PROJECTS
     )
 
     private val INCREMENTAL = true
@@ -34,14 +35,6 @@ object TestTransformer : Transform() {
 
     override fun isIncremental(): Boolean = INCREMENTAL
 
-    override fun applyToVariant(variant: VariantInfo): Boolean {
-//        println("buildTypeName:" + variant.buildTypeName)
-//        println("fullVariantName:" + variant.fullVariantName)
-//        println("isDebuggable:" + variant.isDebuggable)
-//        println("isTest:" + variant.isTest)
-        return super.applyToVariant(variant)
-    }
-
 
     override fun transform(
         context: Context,
@@ -50,10 +43,10 @@ object TestTransformer : Transform() {
         outputProvider: TransformOutputProvider,
         isIncremental: Boolean
     ) {
-        println("AAAA")
 
         inputs.forEach {
 
+            // 对所有Jar包进行处理
             it.jarInputs
                 .forEach { i ->
 
@@ -64,11 +57,14 @@ object TestTransformer : Transform() {
                         Format.JAR
                     )
 
+                    println(i.file.absolutePath)
+
                     Files.copy(i.file.toPath(), d.toPath(), StandardCopyOption.REPLACE_EXISTING)
 
 
                 }
 
+            // 对所有的源代码做处理
             it.directoryInputs
                 .forEach { i ->
 
@@ -79,6 +75,7 @@ object TestTransformer : Transform() {
                         Format.DIRECTORY
                     )
 
+                    d.absoluteFile.deleteRecursively()
                     Files.move(i.file.toPath(), d.toPath(), StandardCopyOption.REPLACE_EXISTING)
 
 
