@@ -17,7 +17,17 @@ gradlePlugin {
 }
 
 
+
+
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
+
+dependencies {
+
+    implementation("com.android.tools.build:gradle:7.2.0")
+
+    // implementation("com.android.tools.build:gradle-api:7.2.0")
+}
+
