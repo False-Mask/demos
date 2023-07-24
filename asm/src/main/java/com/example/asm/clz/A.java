@@ -1,12 +1,12 @@
-package com.example.asm;
+package com.example.asm.clz;
 
 public class A {
 
-    static class B {
+    public static class B {
 
-        static class C {
+        public static class C {
 
-            static class D {
+            public static class D {
 
                 public static void d() {
                     class E {

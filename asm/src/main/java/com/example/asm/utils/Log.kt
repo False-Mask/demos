@@ -1,4 +1,4 @@
-package com.example.asm
+package com.example.asm.utils
 
 fun withLog(tag: String, block: () -> Unit) {
 

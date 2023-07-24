@@ -1,9 +1,12 @@
-package com.example.asm
+package com.example.asm.visitor
 
+import com.example.asm.consts.AsmApiVersion
+import com.example.asm.utils.withLog
+import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
-import org.objectweb.asm.Opcodes
+import org.objectweb.asm.TypePath
 
-class TestClassVisitor : ClassVisitor(Opcodes.ASM9) {
+class TestClassVisitor : ClassVisitor(AsmApiVersion) {
 
     // 文件基本信息
     override fun visit(
@@ -49,6 +52,7 @@ class TestClassVisitor : ClassVisitor(Opcodes.ASM9) {
     }
 
 
+    // 匿名类或局部内部类的外部类
     override fun visitOuterClass(owner: String, name: String, descriptor: String) {
         super.visitOuterClass(owner, name, descriptor)
         withLog("visitOuterClass") {
@@ -58,6 +62,37 @@ class TestClassVisitor : ClassVisitor(Opcodes.ASM9) {
                         "descriptor:$descriptor"
             )
         }
+    }
+
+    override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor {
+        withLog("visitAnnotation") {
+
+            println(
+                "descriptor:$descriptor\n" +
+                        "visible:$visible\n"
+            )
+
+        }
+        return TestAnnotationVisitor()
+    }
+
+    override fun visitTypeAnnotation(
+        typeRef: Int,
+        typePath: TypePath?,
+        descriptor: String?,
+        visible: Boolean
+    ): AnnotationVisitor {
+        withLog("visitTypeAnnotation") {
+            println(
+                "typeRef:$typeRef\n" +
+                        "typePath:${typePath}\n" +
+                        "descriptor:$descriptor\n" +
+                        "visible:$visible\n"
+            )
+
+
+        }
+        return TestAnnotationVisitor()
     }
 
 
