@@ -3,6 +3,7 @@ package com.example.asm.visitor
 import com.example.asm.consts.AsmApiVersion
 import com.example.asm.utils.withLog
 import org.objectweb.asm.AnnotationVisitor
+import org.objectweb.asm.Attribute
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.TypePath
 
@@ -93,6 +94,19 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
 
         }
         return TestAnnotationVisitor()
+    }
+
+    override fun visitAttribute(attribute: Attribute) {
+        super.visitAttribute(attribute)
+    }
+
+    override fun visitNestMember(nestMember: String) {
+        super.visitNestMember(nestMember)
+        withLog("visitNestMember") {
+
+            println("nestMember:$nestMember")
+
+        }
     }
 
 

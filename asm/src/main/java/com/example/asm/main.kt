@@ -15,7 +15,10 @@ fun main() {
 
     val typeAnnotationTest = TypeAnnotationTest::class.java.name
 
-    val cr = ClassReader(typeAnnotationTest)
+    val nestMember = A::class.java.name
+
+
+    val cr = ClassReader(nestMember)
     cr.accept(cv, 0)
 
 }
