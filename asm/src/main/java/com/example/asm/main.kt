@@ -5,7 +5,19 @@ import com.example.asm.utils.withVisitor
 
 fun main() {
 
-    testVisitNest()
+    // testVisitNest()
+
+    testVisitOuterClass()
+
+}
+
+fun testVisitOuterClass() {
+
+    withVisitor {
+        val an = "com.example.asm.clz.A\$B\$C\$D\$1"
+        val tempClass = "com.example.asm.clz.A\$B\$C\$D\$1E"
+        tempClass
+    }
 
 }
 
