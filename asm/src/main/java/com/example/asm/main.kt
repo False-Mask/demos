@@ -1,5 +1,6 @@
 package com.example.asm
 
+import com.example.asm.annotation.AnnotationTest
 import com.example.asm.clz.A
 import com.example.asm.utils.withVisitor
 
@@ -7,7 +8,19 @@ fun main() {
 
     // testVisitNest()
 
-    testVisitOuterClass()
+    // testVisitOuterClass()
+
+    // testVisitAnnotation()
+
+
+}
+
+fun testVisitAnnotation() {
+
+    withVisitor {
+        val an = AnnotationTest::class.java.name
+        an
+    }
 
 }
 
