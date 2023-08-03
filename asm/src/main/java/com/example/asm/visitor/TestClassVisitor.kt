@@ -97,6 +97,9 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
     }
 
     override fun visitAttribute(attribute: Attribute) {
+        withLog("visitAttribute") {
+            println(attribute)
+        }
         super.visitAttribute(attribute)
     }
 

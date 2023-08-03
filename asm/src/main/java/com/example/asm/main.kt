@@ -2,6 +2,7 @@ package com.example.asm
 
 import com.example.asm.annotation.AnnotationTest
 import com.example.asm.annotation.VisitTypeAnnotationTest
+import com.example.asm.attribtute.VisitAttributeTest
 import com.example.asm.clz.A
 import com.example.asm.utils.withVisitor
 
@@ -13,7 +14,18 @@ fun main() {
 
     // testVisitAnnotation()
 
-    testVisitTypeAnnotation()
+    // testVisitTypeAnnotation()
+
+    visitAttribute()
+}
+
+fun visitAttribute() {
+
+    withVisitor {
+
+        VisitAttributeTest::class.java.name
+
+    }
 
 }
 
