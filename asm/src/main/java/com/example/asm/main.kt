@@ -4,6 +4,7 @@ import com.example.asm.annotation.AnnotationTest
 import com.example.asm.annotation.VisitTypeAnnotationTest
 import com.example.asm.attribtute.VisitAttributeTest
 import com.example.asm.clz.A
+import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.utils.withVisitor
 
 fun main() {
@@ -16,7 +17,19 @@ fun main() {
 
     // testVisitTypeAnnotation()
 
-    visitAttribute()
+    // visitAttribute()
+
+    visitNestMember()
+}
+
+fun visitNestMember() {
+
+    withVisitor {
+
+        VisitNestMemberTest::class.java.name
+
+    }
+
 }
 
 fun visitAttribute() {
