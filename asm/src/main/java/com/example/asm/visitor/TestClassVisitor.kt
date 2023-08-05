@@ -5,6 +5,7 @@ import com.example.asm.utils.withLog
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.Attribute
 import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.RecordComponentVisitor
 import org.objectweb.asm.TypePath
 
 class TestClassVisitor : ClassVisitor(AsmApiVersion) {
@@ -136,5 +137,19 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
         super.visitInnerClass(name, outerName, innerName, access)
     }
 
+    override fun visitRecordComponent(
+        name: String?,
+        descriptor: String?,
+        signature: String?
+    ): RecordComponentVisitor? {
+        withLog("visitRecordComponent") {
+            println(
+                "name:$name\n" +
+                        "descriptor:$descriptor\n" +
+                        "signature:$signature\n"
+            )
+        }
+        return super.visitRecordComponent(name, descriptor, signature)
+    }
 
 }

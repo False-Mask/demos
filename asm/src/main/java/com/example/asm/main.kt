@@ -7,6 +7,7 @@ import com.example.asm.clz.A
 import com.example.asm.clz.VisitInnerClassTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
+import com.example.asm.clz.VisitRecordComponentTest
 import com.example.asm.utils.withVisitor
 
 fun main() {
@@ -25,7 +26,16 @@ fun main() {
 
     // visitPermittedSubclass()
 
-    visitInnerClass()
+    // visitInnerClass()
+
+    visitRecordComponent()
+}
+
+fun visitRecordComponent() {
+
+    withVisitor {
+        VisitRecordComponentTest::class.java.name
+    }
 
 }
 
