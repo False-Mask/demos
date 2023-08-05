@@ -112,5 +112,12 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
         }
     }
 
+    override fun visitPermittedSubclass(permittedSubclass: String?) {
+        super.visitPermittedSubclass(permittedSubclass)
+        withLog("visitPermittedSubclass") {
+            println("permittedSubclass:${permittedSubclass}")
+        }
+    }
+
 
 }

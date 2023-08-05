@@ -5,6 +5,7 @@ import com.example.asm.annotation.VisitTypeAnnotationTest
 import com.example.asm.attribtute.VisitAttributeTest
 import com.example.asm.clz.A
 import com.example.asm.clz.VisitNestMemberTest
+import com.example.asm.clz.VisitPermittedSubClassTest
 import com.example.asm.utils.withVisitor
 
 fun main() {
@@ -19,7 +20,20 @@ fun main() {
 
     // visitAttribute()
 
-    visitNestMember()
+    // visitNestMember()
+
+    visitPermittedSubclass()
+
+}
+
+fun visitPermittedSubclass() {
+
+    withVisitor {
+
+        VisitPermittedSubClassTest::class.java.name
+
+    }
+
 }
 
 fun visitNestMember() {

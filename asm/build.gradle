@@ -3,10 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-}
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
 dependencies {
     // https://mvnrepository.com/artifact/org.ow2.asm/asm
