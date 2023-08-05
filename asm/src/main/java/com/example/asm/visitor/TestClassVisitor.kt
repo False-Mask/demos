@@ -119,5 +119,22 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
         }
     }
 
+    override fun visitInnerClass(
+        name: String?,
+        outerName: String?,
+        innerName: String?,
+        access: Int
+    ) {
+        withLog("visitInnerClass") {
+            println(
+                "name:$name\n" +
+                        "outerName:$outerName\n" +
+                        "innerName:$innerName\n" +
+                        "access:$access\n"
+            )
+        }
+        super.visitInnerClass(name, outerName, innerName, access)
+    }
+
 
 }
