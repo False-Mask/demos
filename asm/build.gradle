@@ -5,6 +5,10 @@ plugins {
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
+tasks.compileJava {
+    options.compilerArgs += "-parameters"
+}
+
 dependencies {
     // https://mvnrepository.com/artifact/org.ow2.asm/asm
     implementation("org.ow2.asm:asm:9.5")

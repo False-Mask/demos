@@ -189,7 +189,7 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
                     "exception:$exceptions")
             VisitMethodTest::class.java.name
         }
-        return super.visitMethod(access, name, descriptor, signature, exceptions)
+        return TestMethodVisitor(access,name,descriptor,signature,exceptions)
     }
 
     override fun visitEnd() {

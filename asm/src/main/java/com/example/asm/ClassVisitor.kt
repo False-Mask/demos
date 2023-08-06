@@ -10,7 +10,7 @@ import com.example.asm.clz.VisitMethodTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
 import com.example.asm.clz.VisitRecordComponentTest
-import com.example.asm.utils.withVisitor
+import com.example.asm.utils.withClassVisitor
 
 fun main() {
 
@@ -34,12 +34,12 @@ fun main() {
 
     // visitField()
 
-    visitMethod()
+    // visitMethod()
 }
 
 fun visitMethod() {
 
-    withVisitor {
+    withClassVisitor {
         VisitMethodTest::class.java.name
     }
 
@@ -47,7 +47,7 @@ fun visitMethod() {
 
 fun visitField() {
 
-    withVisitor {
+    withClassVisitor {
         VisitFieldTest::class.java.name
     }
 
@@ -55,7 +55,7 @@ fun visitField() {
 
 fun visitRecordComponent() {
 
-    withVisitor {
+    withClassVisitor {
         VisitRecordComponentTest::class.java.name
     }
 
@@ -63,7 +63,7 @@ fun visitRecordComponent() {
 
 fun visitInnerClass() {
 
-    withVisitor {
+    withClassVisitor {
 
         VisitInnerClassTest::class.java.name
 
@@ -73,7 +73,7 @@ fun visitInnerClass() {
 
 fun visitPermittedSubclass() {
 
-    withVisitor {
+    withClassVisitor {
 
         VisitPermittedSubClassTest::class.java.name
 
@@ -83,7 +83,7 @@ fun visitPermittedSubclass() {
 
 fun visitNestMember() {
 
-    withVisitor {
+    withClassVisitor {
 
         VisitNestMemberTest::class.java.name
 
@@ -93,7 +93,7 @@ fun visitNestMember() {
 
 fun visitAttribute() {
 
-    withVisitor {
+    withClassVisitor {
 
         VisitAttributeTest::class.java.name
 
@@ -103,7 +103,7 @@ fun visitAttribute() {
 
 fun testVisitTypeAnnotation() {
 
-    withVisitor {
+    withClassVisitor {
         VisitTypeAnnotationTest::class.java.name
     }
 
@@ -111,7 +111,7 @@ fun testVisitTypeAnnotation() {
 
 fun testVisitAnnotation() {
 
-    withVisitor {
+    withClassVisitor {
         val an = AnnotationTest::class.java.name
         an
     }
@@ -120,7 +120,7 @@ fun testVisitAnnotation() {
 
 fun testVisitOuterClass() {
 
-    withVisitor {
+    withClassVisitor {
         val an = "com.example.asm.clz.A\$B\$C\$D\$1"
         val tempClass = "com.example.asm.clz.A\$B\$C\$D\$1E"
         tempClass
@@ -130,7 +130,7 @@ fun testVisitOuterClass() {
 
 fun testVisitNest() {
 
-    withVisitor {
+    withClassVisitor {
         val a = A::class.java.name
         val b = A.B::class.java.name
         val c = A.B.C::class.java.name

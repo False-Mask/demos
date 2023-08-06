@@ -14,7 +14,7 @@ fun withLog(tag: String, block: () -> Unit) {
     println()
 }
 
-fun withVisitor(block: () -> String) {
+fun withClassVisitor(block: () -> String) {
 
     val cv = TestClassVisitor()
     ClassReader(block()).accept(cv , 0)
