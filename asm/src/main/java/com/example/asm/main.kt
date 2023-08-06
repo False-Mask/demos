@@ -6,6 +6,7 @@ import com.example.asm.attribtute.VisitAttributeTest
 import com.example.asm.clz.A
 import com.example.asm.clz.VisitFieldTest
 import com.example.asm.clz.VisitInnerClassTest
+import com.example.asm.clz.VisitMethodTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
 import com.example.asm.clz.VisitRecordComponentTest
@@ -31,8 +32,17 @@ fun main() {
 
     // visitRecordComponent()
 
-    visitField()
-    
+    // visitField()
+
+    visitMethod()
+}
+
+fun visitMethod() {
+
+    withVisitor {
+        VisitMethodTest::class.java.name
+    }
+
 }
 
 fun visitField() {

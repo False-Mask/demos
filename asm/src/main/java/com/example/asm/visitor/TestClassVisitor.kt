@@ -1,11 +1,13 @@
 package com.example.asm.visitor
 
+import com.example.asm.clz.VisitMethodTest
 import com.example.asm.consts.AsmApiVersion
 import com.example.asm.utils.withLog
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.Attribute
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.FieldVisitor
+import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.RecordComponentVisitor
 import org.objectweb.asm.TypePath
 
@@ -170,6 +172,28 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
             )
         }
         return super.visitField(access, name, descriptor, signature, value)
+    }
+
+    override fun visitMethod(
+        access: Int,
+        name: String?,
+        descriptor: String?,
+        signature: String?,
+        exceptions: Array<out String>?
+    ): MethodVisitor? {
+        withLog("visitMethod") {
+            println("access:$access\n" +
+                    "name:$name\n" +
+                    "descriptor:$descriptor\n" +
+                    "signature:$signature\n" +
+                    "exception:$exceptions")
+            VisitMethodTest::class.java.name
+        }
+        return super.visitMethod(access, name, descriptor, signature, exceptions)
+    }
+
+    override fun visitEnd() {
+        super.visitEnd()
     }
 
 }
