@@ -4,6 +4,7 @@ import com.example.asm.annotation.AnnotationTest
 import com.example.asm.annotation.VisitTypeAnnotationTest
 import com.example.asm.attribtute.VisitAttributeTest
 import com.example.asm.clz.A
+import com.example.asm.clz.VisitFieldTest
 import com.example.asm.clz.VisitInnerClassTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
@@ -28,7 +29,18 @@ fun main() {
 
     // visitInnerClass()
 
-    visitRecordComponent()
+    // visitRecordComponent()
+
+    visitField()
+    
+}
+
+fun visitField() {
+
+    withVisitor {
+        VisitFieldTest::class.java.name
+    }
+
 }
 
 fun visitRecordComponent() {

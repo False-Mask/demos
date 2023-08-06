@@ -5,6 +5,7 @@ import com.example.asm.utils.withLog
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.Attribute
 import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.FieldVisitor
 import org.objectweb.asm.RecordComponentVisitor
 import org.objectweb.asm.TypePath
 
@@ -150,6 +151,25 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
             )
         }
         return super.visitRecordComponent(name, descriptor, signature)
+    }
+
+    override fun visitField(
+        access: Int,
+        name: String?,
+        descriptor: String?,
+        signature: String?,
+        value: Any?
+    ): FieldVisitor? {
+        withLog("visitField") {
+            println(
+                "access:$access\n" +
+                        "name:$name\n" +
+                        "descriptor:$descriptor\n" +
+                        "signature:$signature\n" +
+                        "value:$value"
+            )
+        }
+        return super.visitField(access, name, descriptor, signature, value)
     }
 
 }
