@@ -1,12 +1,22 @@
 package com.example.asm
 
+import com.example.asm.clz.VisitDefaultMethod
 import com.example.asm.clz.VisitMethodParameter
 import com.example.asm.utils.withClassVisitor
 
 fun main() {
 
-    visitParameter()
+    // visitParameter()
 
+    visitDefault()
+
+}
+
+fun visitDefault() {
+
+    withClassVisitor {
+        VisitDefaultMethod::class.java.name
+    }
 
 }
 

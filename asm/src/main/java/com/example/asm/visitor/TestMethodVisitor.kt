@@ -2,6 +2,7 @@ package com.example.asm.visitor
 
 import com.example.asm.consts.AsmApiVersion
 import com.example.asm.utils.withLog
+import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.MethodVisitor
 
 class TestMethodVisitor(
@@ -17,6 +18,12 @@ class TestMethodVisitor(
         withLog("visitParameter") {
             println("name:$name\naccess:$access")
         }
+    }
+
+    override fun visitAnnotationDefault(): AnnotationVisitor {
+        withLog("visitAnnotationDefault") {
+        }
+        return TestAnnotationVisitor()
     }
 
 }
