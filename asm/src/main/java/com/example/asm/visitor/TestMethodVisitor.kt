@@ -3,6 +3,7 @@ package com.example.asm.visitor
 import com.example.asm.consts.AsmApiVersion
 import com.example.asm.utils.withLog
 import org.objectweb.asm.AnnotationVisitor
+import org.objectweb.asm.Attribute
 import org.objectweb.asm.MethodVisitor
 
 class TestMethodVisitor(
@@ -12,6 +13,14 @@ class TestMethodVisitor(
     signature: String?,
     exceptions: Array<out String>?
 ) : MethodVisitor(AsmApiVersion) {
+
+    override fun visitAnnotation(descriptor: String?, visible: Boolean): AnnotationVisitor {
+        return super.visitAnnotation(descriptor, visible)
+    }
+
+    override fun visitAttribute(attribute: Attribute?) {
+        super.visitAttribute(attribute)
+    }
 
     override fun visitParameter(name: String?, access: Int) {
         super.visitParameter(name, access)
