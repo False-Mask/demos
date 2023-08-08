@@ -26,4 +26,11 @@ class TestMethodVisitor(
         return TestAnnotationVisitor()
     }
 
+    override fun visitAnnotableParameterCount(parameterCount: Int, visible: Boolean) {
+        super.visitAnnotableParameterCount(parameterCount, visible)
+        withLog("visitAnnotableParameterCount") {
+            println("parameterCount:$parameterCount\nvisible:$visible")
+        }
+    }
+
 }
