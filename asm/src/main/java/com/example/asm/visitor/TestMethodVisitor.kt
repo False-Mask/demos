@@ -42,4 +42,17 @@ class TestMethodVisitor(
         }
     }
 
+    override fun visitParameterAnnotation(
+        parameter: Int,
+        descriptor: String?,
+        visible: Boolean
+    ): AnnotationVisitor? {
+        withLog("visitParameterAnnotation") {
+            println("parameter:$parameter\n" +
+                    "descriptor:$descriptor\n" +
+                    "visible:$visible")
+        }
+        return super.visitParameterAnnotation(parameter, descriptor, visible)
+    }
+
 }
