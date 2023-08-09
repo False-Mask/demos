@@ -55,4 +55,11 @@ class TestMethodVisitor(
         return super.visitParameterAnnotation(parameter, descriptor, visible)
     }
 
+
+    override fun visitCode() {
+        super.visitCode()
+    }
+
+
+
 }
