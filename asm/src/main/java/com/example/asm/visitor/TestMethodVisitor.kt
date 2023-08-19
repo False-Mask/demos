@@ -14,7 +14,7 @@ class TestMethodVisitor(
     exceptions: Array<out String>?
 ) : MethodVisitor(AsmApiVersion) {
 
-    override fun visitAnnotation(descriptor: String?, visible: Boolean): AnnotationVisitor {
+    override fun visitAnnotation(descriptor: String?, visible: Boolean): AnnotationVisitor? {
         return super.visitAnnotation(descriptor, visible)
     }
 
@@ -29,7 +29,7 @@ class TestMethodVisitor(
         }
     }
 
-    override fun visitAnnotationDefault(): AnnotationVisitor {
+    override fun visitAnnotationDefault(): AnnotationVisitor? {
         withLog("visitAnnotationDefault") {
         }
         return TestAnnotationVisitor()
@@ -60,6 +60,13 @@ class TestMethodVisitor(
         super.visitCode()
     }
 
+
+    override fun visitInsn(opcode: Int) {
+        withLog("visitInsn") {
+            println("opcode:$opcode")
+        }
+        super.visitInsn(opcode)
+    }
 
 
 }

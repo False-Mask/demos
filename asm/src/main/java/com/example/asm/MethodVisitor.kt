@@ -1,6 +1,7 @@
 package com.example.asm
 
 import com.example.asm.clz.VisitDefaultMethod
+import com.example.asm.clz.VisitInsnTest
 import com.example.asm.clz.VisitMethodParamCount
 import com.example.asm.clz.VisitMethodParameter
 import com.example.asm.clz.VisitParamAnnTest
@@ -15,6 +16,16 @@ fun main() {
     // visitParamCount()
 
     // visitParamAnn()
+
+    visitInsn()
+}
+
+fun visitInsn() {
+
+    withClassVisitor {
+        VisitInsnTest::class.java.name
+    }
+
 }
 
 fun visitParamAnn() {

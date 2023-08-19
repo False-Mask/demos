@@ -14,7 +14,7 @@ dependencyResolutionManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = "job"
+rootProject.name = "demos"
 include ':process'
 include ':ui'
 include ':vp'

@@ -180,7 +180,7 @@ class TestClassVisitor : ClassVisitor(AsmApiVersion) {
         descriptor: String?,
         signature: String?,
         exceptions: Array<out String>?
-    ): MethodVisitor? {
+    ): MethodVisitor {
         withLog("visitMethod") {
             println("access:$access\n" +
                     "name:$name\n" +
