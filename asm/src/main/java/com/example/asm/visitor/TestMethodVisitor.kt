@@ -68,5 +68,12 @@ class TestMethodVisitor(
         super.visitInsn(opcode)
     }
 
+    override fun visitIntInsn(opcode: Int, operand: Int) {
+        withLog("visitIntInsn") {
+            println("opcode:$opcode\n" +
+            "operand:$operand")
+        }
+        super.visitIntInsn(opcode, operand)
+    }
 
 }

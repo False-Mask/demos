@@ -6,6 +6,7 @@ import com.example.asm.attribtute.VisitAttributeTest
 import com.example.asm.clz.A
 import com.example.asm.clz.VisitFieldTest
 import com.example.asm.clz.VisitInnerClassTest
+import com.example.asm.clz.VisitIntInsn
 import com.example.asm.clz.VisitMethodTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
@@ -35,6 +36,16 @@ fun main() {
     // visitField()
 
     // visitMethod()
+
+    visitIntInsn()
+}
+
+fun visitIntInsn() {
+
+    withClassVisitor {
+        VisitIntInsn::class.java.name
+    }
+
 }
 
 fun visitMethod() {
