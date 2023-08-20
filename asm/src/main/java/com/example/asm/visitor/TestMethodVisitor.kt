@@ -5,6 +5,7 @@ import com.example.asm.utils.withLog
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.Attribute
 import org.objectweb.asm.MethodVisitor
+import org.objectweb.asm.Opcodes
 
 class TestMethodVisitor(
     access: Int,
@@ -74,6 +75,22 @@ class TestMethodVisitor(
             "operand:$operand")
         }
         super.visitIntInsn(opcode, operand)
+    }
+
+    override fun visitVarInsn(opcode: Int, varIndex: Int) {
+        withLog("visitVarInsn") {
+            val code = if (opcode == Opcodes.ILOAD) {
+                "ILoad"
+            } else if(opcode == Opcodes.ISTORE) {
+                "IStore"
+            } else {
+                ""
+            }
+
+            println("opcode:$code\n" +
+            "varIndex:$varIndex")
+        }
+        super.visitVarInsn(opcode, varIndex)
     }
 
 }
