@@ -111,5 +111,22 @@ class TestMethodVisitor(
         super.visitFieldInsn(opcode, owner, name, descriptor)
     }
 
+    override fun visitMethodInsn(
+        opcode: Int,
+        owner: String?,
+        name: String?,
+        descriptor: String?,
+        isInterface: Boolean
+    ) {
+        withLog("visitMethodInsn") {
+            println("opcode:$opcode\n" +
+            "owner:$owner\n" +
+            "name:$name\n" +
+            "descriptor:$descriptor\n" +
+            "isInterface:$isInterface")
+        }
+        super.visitMethodInsn(opcode, owner, name, descriptor, isInterface)
+    }
+
 
 }

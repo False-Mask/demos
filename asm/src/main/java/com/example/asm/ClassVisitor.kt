@@ -8,6 +8,7 @@ import com.example.asm.clz.VisitFieldInsnTest
 import com.example.asm.clz.VisitFieldTest
 import com.example.asm.clz.VisitInnerClassTest
 import com.example.asm.clz.VisitIntInsn
+import com.example.asm.clz.VisitMethodInsnTest
 import com.example.asm.clz.VisitMethodTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
@@ -46,7 +47,19 @@ fun main() {
 
     // visitTypeInsn()
 
-    visitFieldInsn()
+    // visitFieldInsn()
+
+    visitMethodInsn()
+}
+
+fun visitMethodInsn() {
+
+    withClassVisitor {
+
+        VisitMethodInsnTest::class.java.name
+
+    }
+
 }
 
 fun visitFieldInsn() {
