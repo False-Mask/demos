@@ -101,5 +101,15 @@ class TestMethodVisitor(
         super.visitTypeInsn(opcode, type)
     }
 
+    override fun visitFieldInsn(opcode: Int, owner: String?, name: String?, descriptor: String?) {
+        withLog("visitFieldInsn") {
+            println("opcod:$opcode\n" +
+            "owner:$owner\n" +
+            "name:$name\n" +
+            "descriptor:$descriptor")
+        }
+        super.visitFieldInsn(opcode, owner, name, descriptor)
+    }
+
 
 }

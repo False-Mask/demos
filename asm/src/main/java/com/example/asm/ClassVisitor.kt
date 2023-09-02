@@ -4,6 +4,7 @@ import com.example.asm.annotation.AnnotationTest
 import com.example.asm.annotation.VisitTypeAnnotationTest
 import com.example.asm.attribtute.VisitAttributeTest
 import com.example.asm.clz.A
+import com.example.asm.clz.VisitFieldInsnTest
 import com.example.asm.clz.VisitFieldTest
 import com.example.asm.clz.VisitInnerClassTest
 import com.example.asm.clz.VisitIntInsn
@@ -43,7 +44,17 @@ fun main() {
 
     // visitVarInsn()
 
-    visitTypeInsn()
+    // visitTypeInsn()
+
+    visitFieldInsn()
+}
+
+fun visitFieldInsn() {
+
+    withClassVisitor {
+        VisitFieldInsnTest::class.java.name
+    }
+
 }
 
 fun visitTypeInsn() {
