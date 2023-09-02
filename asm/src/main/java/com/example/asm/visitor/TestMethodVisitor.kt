@@ -93,4 +93,13 @@ class TestMethodVisitor(
         super.visitVarInsn(opcode, varIndex)
     }
 
+    override fun visitTypeInsn(opcode: Int, type: String?) {
+        withLog("visitTypeInsn") {
+            println("opcodes:$opcode\n" +
+                    "type:$type")
+        }
+        super.visitTypeInsn(opcode, type)
+    }
+
+
 }

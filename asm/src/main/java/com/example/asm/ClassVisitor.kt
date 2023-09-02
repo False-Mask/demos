@@ -11,6 +11,7 @@ import com.example.asm.clz.VisitMethodTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
 import com.example.asm.clz.VisitRecordComponentTest
+import com.example.asm.clz.VisitTypeInsnTest
 import com.example.asm.clz.VisitVarInsnTest
 import com.example.asm.utils.withClassVisitor
 
@@ -40,7 +41,17 @@ fun main() {
 
     // visitIntInsn()
 
-    visitVarInsn()
+    // visitVarInsn()
+
+    visitTypeInsn()
+}
+
+fun visitTypeInsn() {
+
+    withClassVisitor {
+        VisitTypeInsnTest::class.java.name
+    }
+
 }
 
 fun visitVarInsn() {
