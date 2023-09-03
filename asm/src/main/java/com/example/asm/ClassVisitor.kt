@@ -9,6 +9,7 @@ import com.example.asm.clz.VisitFieldTest
 import com.example.asm.clz.VisitInnerClassTest
 import com.example.asm.clz.VisitIntInsn
 import com.example.asm.clz.VisitInvokeDynamicTest
+import com.example.asm.clz.VisitJumpInsnTest
 import com.example.asm.clz.VisitMethodInsnTest
 import com.example.asm.clz.VisitMethodTest
 import com.example.asm.clz.VisitNestMemberTest
@@ -52,7 +53,15 @@ fun main() {
 
     // visitMethodInsn()
 
-    visitInvokeDynamicInsn()
+    // visitInvokeDynamicInsn()
+
+    visitJumpInsn()
+}
+
+fun visitJumpInsn() {
+    withClassVisitor {
+        VisitJumpInsnTest::class.java.name
+    }
 }
 
 fun visitInvokeDynamicInsn() {

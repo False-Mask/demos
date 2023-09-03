@@ -5,6 +5,7 @@ import com.example.asm.utils.withLog
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.Attribute
 import org.objectweb.asm.Handle
+import org.objectweb.asm.Label
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
 
@@ -147,6 +148,14 @@ class TestMethodVisitor(
             bootstrapMethodHandle,
             *bootstrapMethodArguments
         )
+    }
+
+    override fun visitJumpInsn(opcode: Int, label: Label?) {
+        withLog("visitJumpInsn") {
+            println("opcode:$opcode\n" +
+            "label:{info:${label!!.info}}")
+        }
+        super.visitJumpInsn(opcode, label)
     }
 
 
