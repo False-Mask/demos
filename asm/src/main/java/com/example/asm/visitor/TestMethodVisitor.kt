@@ -4,6 +4,7 @@ import com.example.asm.consts.AsmApiVersion
 import com.example.asm.utils.withLog
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.Attribute
+import org.objectweb.asm.Handle
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
 
@@ -126,6 +127,26 @@ class TestMethodVisitor(
             "isInterface:$isInterface")
         }
         super.visitMethodInsn(opcode, owner, name, descriptor, isInterface)
+    }
+
+    override fun visitInvokeDynamicInsn(
+        name: String?,
+        descriptor: String?,
+        bootstrapMethodHandle: Handle?,
+        vararg bootstrapMethodArguments: Any?
+    ) {
+        withLog("visitInvokeDynamicInsn") {
+            println("name:$name\n" +
+            "descriptor:$descriptor\n" +
+            "bootstrapMethodHandle:$bootstrapMethodHandle\n" +
+            "bootstrapMethodArguments:${bootstrapMethodArguments.contentToString()}")
+        }
+        super.visitInvokeDynamicInsn(
+            name,
+            descriptor,
+            bootstrapMethodHandle,
+            *bootstrapMethodArguments
+        )
     }
 
 
