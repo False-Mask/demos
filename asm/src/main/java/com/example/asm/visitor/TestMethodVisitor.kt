@@ -165,5 +165,11 @@ class TestMethodVisitor(
         super.visitLabel(label)
     }
 
+    override fun visitLdcInsn(value: Any?) {
+        withLog("visitLdcInsn") {
+            println("value:$value")
+        }
+        super.visitLdcInsn(value)
+    }
 
 }
