@@ -180,4 +180,14 @@ class TestMethodVisitor(
         super.visitIincInsn(varIndex, increment)
     }
 
+    override fun visitTableSwitchInsn(min: Int, max: Int, dflt: Label?, vararg labels: Label?) {
+        withLog("visitTableSwitchInsn") {
+            println("min:$min\n" +
+            "max:$max\n" +
+            "dflt:{info:${dflt!!.info}}" +
+            "labels:$labels")
+        }
+        super.visitTableSwitchInsn(min, max, dflt, *labels)
+    }
+
 }

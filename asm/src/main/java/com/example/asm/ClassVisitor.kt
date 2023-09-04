@@ -16,6 +16,7 @@ import com.example.asm.clz.VisitMethodTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
 import com.example.asm.clz.VisitRecordComponentTest
+import com.example.asm.clz.VisitTableSwitchTest
 import com.example.asm.clz.VisitTypeInsnTest
 import com.example.asm.clz.VisitVarInsnTest
 import com.example.asm.utils.withClassVisitor
@@ -58,7 +59,15 @@ fun main() {
 
     // visitJumpInsn()
 
-    visitIinsn()
+    // visitIinsn()
+
+    visitTableSwitchTest()
+}
+
+fun visitTableSwitchTest() {
+    withClassVisitor {
+        VisitTableSwitchTest::class.java.name
+    }
 }
 
 fun visitIinsn() {
