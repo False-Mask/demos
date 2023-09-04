@@ -6,6 +6,7 @@ import com.example.asm.attribtute.VisitAttributeTest
 import com.example.asm.clz.A
 import com.example.asm.clz.VisitFieldInsnTest
 import com.example.asm.clz.VisitFieldTest
+import com.example.asm.clz.VisitIincInsnTest
 import com.example.asm.clz.VisitInnerClassTest
 import com.example.asm.clz.VisitIntInsn
 import com.example.asm.clz.VisitInvokeDynamicTest
@@ -55,7 +56,15 @@ fun main() {
 
     // visitInvokeDynamicInsn()
 
-    visitJumpInsn()
+    // visitJumpInsn()
+
+    visitIinsn()
+}
+
+fun visitIinsn() {
+    withClassVisitor {
+        VisitIincInsnTest::class.java.name
+    }
 }
 
 fun visitJumpInsn() {

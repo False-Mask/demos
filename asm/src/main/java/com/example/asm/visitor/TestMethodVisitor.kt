@@ -172,4 +172,12 @@ class TestMethodVisitor(
         super.visitLdcInsn(value)
     }
 
+    override fun visitIincInsn(varIndex: Int, increment: Int) {
+        withLog("visitIincInsn") {
+            println("varIndex:$varIndex\n" +
+            "increment:$increment")
+        }
+        super.visitIincInsn(varIndex, increment)
+    }
+
 }
