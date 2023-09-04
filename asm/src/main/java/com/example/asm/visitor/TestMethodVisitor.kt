@@ -158,5 +158,12 @@ class TestMethodVisitor(
         super.visitJumpInsn(opcode, label)
     }
 
+    override fun visitLabel(label: Label?) {
+        withLog("visitLabel") {
+            println("info:${label!!.info}")
+        }
+        super.visitLabel(label)
+    }
+
 
 }
