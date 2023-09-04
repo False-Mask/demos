@@ -190,4 +190,14 @@ class TestMethodVisitor(
         super.visitTableSwitchInsn(min, max, dflt, *labels)
     }
 
+
+    override fun visitLookupSwitchInsn(dflt: Label?, keys: IntArray?, labels: Array<out Label>?) {
+        withLog("visitLookupSwitchInsn") {
+            println("dflt:$dflt\n" +
+            "keys:${keys.contentToString()}\n" +
+            "labels:${labels.contentToString()}")
+        }
+        super.visitLookupSwitchInsn(dflt, keys, labels)
+    }
+
 }
