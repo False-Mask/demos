@@ -224,4 +224,14 @@ class TestMethodVisitor(
         return super.visitInsnAnnotation(typeRef, typePath, descriptor, visible)
     }
 
+    override fun visitTryCatchBlock(start: Label?, end: Label?, handler: Label?, type: String?) {
+        withLog("visitTryCatchBlock") {
+            println("start:$start\n" +
+                    "end:$end\n" +
+                    "handler:$handler\n" +
+                    "type:$type")
+        }
+        super.visitTryCatchBlock(start, end, handler, type)
+    }
+
 }
