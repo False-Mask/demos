@@ -234,4 +234,19 @@ class TestMethodVisitor(
         super.visitTryCatchBlock(start, end, handler, type)
     }
 
+    override fun visitTryCatchAnnotation(
+        typeRef: Int,
+        typePath: TypePath?,
+        descriptor: String?,
+        visible: Boolean
+    ): AnnotationVisitor? {
+        withLog("visitTryCatchAnnotation") {
+            println("typeRef:$typeRef\n" +
+            "typePath:$typePath\n" +
+            "descriptor:$descriptor\n" +
+            "visible:$visible")
+        }
+        return super.visitTryCatchAnnotation(typeRef, typePath, descriptor, visible)
+    }
+
 }

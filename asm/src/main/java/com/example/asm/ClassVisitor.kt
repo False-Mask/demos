@@ -20,6 +20,7 @@ import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
 import com.example.asm.clz.VisitRecordComponentTest
 import com.example.asm.clz.VisitTableSwitchTest
+import com.example.asm.clz.VisitTryCatchAnnotationTest
 import com.example.asm.clz.VisitTryCatchBlockTest
 import com.example.asm.clz.VisitTypeInsnTest
 import com.example.asm.clz.VisitVarInsnTest
@@ -73,7 +74,15 @@ fun main() {
 
     // visitInsnAnnotation()
 
-    visitTryCatchBlock()
+    // visitTryCatchBlock()
+
+    visitTryCatchAnnotation()
+}
+
+fun visitTryCatchAnnotation() {
+    withClassVisitor {
+        VisitTryCatchAnnotationTest::class.java.name
+    }
 }
 
 fun visitTryCatchBlock() {
