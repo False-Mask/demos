@@ -200,4 +200,12 @@ class TestMethodVisitor(
         super.visitLookupSwitchInsn(dflt, keys, labels)
     }
 
+    override fun visitMultiANewArrayInsn(descriptor: String?, numDimensions: Int) {
+        withLog("visitMultiANewArrayInsn") {
+            println("descriptor:$descriptor\n" +
+            "numDimensions:$numDimensions")
+        }
+        super.visitMultiANewArrayInsn(descriptor, numDimensions)
+    }
+
 }

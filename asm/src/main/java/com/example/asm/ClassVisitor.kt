@@ -14,6 +14,7 @@ import com.example.asm.clz.VisitJumpInsnTest
 import com.example.asm.clz.VisitLookupSwitchInsnTest
 import com.example.asm.clz.VisitMethodInsnTest
 import com.example.asm.clz.VisitMethodTest
+import com.example.asm.clz.VisitMultiANewArrayInsnTest
 import com.example.asm.clz.VisitNestMemberTest
 import com.example.asm.clz.VisitPermittedSubClassTest
 import com.example.asm.clz.VisitRecordComponentTest
@@ -64,7 +65,15 @@ fun main() {
 
     // visitTableSwitchTest()
 
-    visitLookupSwitchInsn()
+    // visitLookupSwitchInsn()
+
+    visitMultiANewArray()
+}
+
+fun visitMultiANewArray() {
+    withClassVisitor {
+        VisitMultiANewArrayInsnTest::class.java.name
+    }
 }
 
 fun visitLookupSwitchInsn() {
