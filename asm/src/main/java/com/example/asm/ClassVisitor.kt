@@ -8,6 +8,7 @@ import com.example.asm.clz.VisitFieldInsnTest
 import com.example.asm.clz.VisitFieldTest
 import com.example.asm.clz.VisitIincInsnTest
 import com.example.asm.clz.VisitInnerClassTest
+import com.example.asm.clz.VisitInsnAnnotationTest
 import com.example.asm.clz.VisitIntInsn
 import com.example.asm.clz.VisitInvokeDynamicTest
 import com.example.asm.clz.VisitJumpInsnTest
@@ -67,7 +68,15 @@ fun main() {
 
     // visitLookupSwitchInsn()
 
-    visitMultiANewArray()
+    // visitMultiANewArray()
+
+    visitInsnAnnotation()
+}
+
+fun visitInsnAnnotation() {
+    withClassVisitor {
+        VisitInsnAnnotationTest::class.java.name
+    }
 }
 
 fun visitMultiANewArray() {

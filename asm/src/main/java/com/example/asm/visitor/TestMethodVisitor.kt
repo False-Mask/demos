@@ -8,6 +8,7 @@ import org.objectweb.asm.Handle
 import org.objectweb.asm.Label
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
+import org.objectweb.asm.TypePath
 
 class TestMethodVisitor(
     access: Int,
@@ -206,6 +207,21 @@ class TestMethodVisitor(
             "numDimensions:$numDimensions")
         }
         super.visitMultiANewArrayInsn(descriptor, numDimensions)
+    }
+
+    override fun visitInsnAnnotation(
+        typeRef: Int,
+        typePath: TypePath?,
+        descriptor: String?,
+        visible: Boolean
+    ): AnnotationVisitor? {
+        withLog("visitInsnAnnotation") {
+            println("typeRef:$typeRef\n" +
+            "typePath:$typePath\n" +
+            "descriptor:$descriptor\n" +
+            "visible:$visible")
+        }
+        return super.visitInsnAnnotation(typeRef, typePath, descriptor, visible)
     }
 
 }
