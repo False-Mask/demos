@@ -305,4 +305,12 @@ class TestMethodVisitor(
         super.visitLineNumber(line, start)
     }
 
+    override fun visitMaxs(maxStack: Int, maxLocals: Int) {
+        withLog("visitMaxs") {
+            println("maxStack:$maxStack\n" +
+                    "maxLocals:$maxLocals")
+        }
+        super.visitMaxs(maxStack, maxLocals)
+    }
+
 }
