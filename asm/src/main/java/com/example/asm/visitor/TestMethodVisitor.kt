@@ -296,4 +296,13 @@ class TestMethodVisitor(
         )
     }
 
+    override fun visitLineNumber(line: Int, start: Label?) {
+        withLog("visitLineNumber") {
+            println("line:$line\n" +
+            "start:$start")
+            println("info:${start!!.info}")
+        }
+        super.visitLineNumber(line, start)
+    }
+
 }
