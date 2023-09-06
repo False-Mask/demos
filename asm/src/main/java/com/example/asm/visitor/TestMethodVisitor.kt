@@ -268,4 +268,32 @@ class TestMethodVisitor(
         super.visitLocalVariable(name, descriptor, signature, start, end, index)
     }
 
+    override fun visitLocalVariableAnnotation(
+        typeRef: Int,
+        typePath: TypePath?,
+        start: Array<out Label>?,
+        end: Array<out Label>?,
+        index: IntArray?,
+        descriptor: String?,
+        visible: Boolean
+    ): AnnotationVisitor? {
+        withLog("visitLocalVariableAnnotation") {
+            println("typeRef:$typeRef\n" +
+                    "typePath:$typePath\n" +
+                    "start:${start.contentToString()}\n" +
+                    "end:${end.contentToString()}\n" +
+                    "descriptor:$descriptor\n" +
+                    "visible:$visible")
+        }
+        return super.visitLocalVariableAnnotation(
+            typeRef,
+            typePath,
+            start,
+            end,
+            index,
+            descriptor,
+            visible
+        )
+    }
+
 }
