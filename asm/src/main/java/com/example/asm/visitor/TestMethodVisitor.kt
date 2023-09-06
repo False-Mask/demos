@@ -313,4 +313,11 @@ class TestMethodVisitor(
         super.visitMaxs(maxStack, maxLocals)
     }
 
+    override fun visitEnd() {
+        withLog("visitMethod.end") {
+
+        }
+        super.visitEnd()
+    }
+
 }
