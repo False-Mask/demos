@@ -249,4 +249,23 @@ class TestMethodVisitor(
         return super.visitTryCatchAnnotation(typeRef, typePath, descriptor, visible)
     }
 
+    override fun visitLocalVariable(
+        name: String?,
+        descriptor: String?,
+        signature: String?,
+        start: Label?,
+        end: Label?,
+        index: Int
+    ) {
+        withLog("visitLocalVariable") {
+            println("name:$name\n" +
+            "descriptor:$descriptor\n" +
+            "signature:$signature\n" +
+            "start:$start\n" +
+            "end:$end\n" +
+            "index:$index")
+        }
+        super.visitLocalVariable(name, descriptor, signature, start, end, index)
+    }
+
 }

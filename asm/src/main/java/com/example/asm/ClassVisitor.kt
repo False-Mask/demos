@@ -12,6 +12,7 @@ import com.example.asm.clz.VisitInsnAnnotationTest
 import com.example.asm.clz.VisitIntInsn
 import com.example.asm.clz.VisitInvokeDynamicTest
 import com.example.asm.clz.VisitJumpInsnTest
+import com.example.asm.clz.VisitLocalVariableTest
 import com.example.asm.clz.VisitLookupSwitchInsnTest
 import com.example.asm.clz.VisitMethodInsnTest
 import com.example.asm.clz.VisitMethodTest
@@ -76,7 +77,15 @@ fun main() {
 
     // visitTryCatchBlock()
 
-    visitTryCatchAnnotation()
+    // visitTryCatchAnnotation()
+
+    visitLocalVariable()
+}
+
+fun visitLocalVariable() {
+    withClassVisitor {
+        VisitLocalVariableTest::class.java.name
+    }
 }
 
 fun visitTryCatchAnnotation() {
